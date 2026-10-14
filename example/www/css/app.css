@@ -1,0 +1,37 @@
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 16px;
+    padding-top: calc(16px + env(safe-area-inset-top));
+    background: #fafafa;
+    color: #222;
+}
+
+h1 { font-size: 22px; }
+h2 { font-size: 16px; margin-bottom: 4px; }
+
+button {
+    font-size: 15px;
+    padding: 10px 12px;
+    margin: 4px 4px 4px 0;
+}
+
+button.big {
+    width: 100%;
+    font-size: 20px;
+    padding: 24px;
+}
+
+pre {
+    background: #eee;
+    padding: 8px;
+    overflow-x: auto;
+    font-size: 12px;
+}
+
+#warning {
+    background: #c81e3c;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}

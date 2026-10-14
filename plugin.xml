@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-tapjack-protection"
+        version="0.1.0">
+
+    <name>Tapjack Protection</name>
+    <description>Tapjacking and screen overlay protection for Cordova apps on Android 9-17 (API 28-37).</description>
+    <license>MIT</license>
+    <keywords>cordova,android,security,tapjacking,overlay,clickjacking</keywords>
+
+    <engines>
+        <engine name="cordova" version=">=12.0.0" />
+        <engine name="cordova-android" version=">=12.0.0" />
+    </engines>
+
+    <js-module src="www/tapjack.js" name="TapjackProtection">
+        <clobbers target="cordova.plugins.tapjackProtection" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="TapjackProtection">
+                <param name="android-package" value="com.tapjackos.protection.TapjackProtection" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <!-- Normal (install-time) permission; required for Window.setHideOverlayWindows on API 31+. -->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.HIDE_OVERLAY_WINDOWS" />
+        </config-file>
+
+        <source-file src="src/android/TapjackProtection.java" target-dir="src/com/tapjackos/protection" />
+        <source-file src="src/android/TouchGuard.java" target-dir="src/com/tapjackos/protection" />
+        <source-file src="src/android/GuardedWindowCallback.java" target-dir="src/com/tapjackos/protection" />
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="TapjackProtection">
+                <param name="ios-package" value="CDVTapjackProtection" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CDVTapjackProtection.h" />
+        <source-file src="src/ios/CDVTapjackProtection.m" />
+    </platform>
+</plugin>

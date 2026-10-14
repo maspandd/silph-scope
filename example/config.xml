@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.tapjackos.example" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Tapjack Example</name>
+    <description>Test harness for cordova-plugin-tapjack-protection.</description>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+
+    <platform name="android">
+        <!-- Android 9 (API 28) and up. Raise targetSdk to 37 once your cordova-android supports it. -->
+        <preference name="android-minSdkVersion" value="28" />
+        <preference name="android-targetSdkVersion" value="36" />
+    </platform>
+
+    <!-- Plugin defaults, shown explicitly. -->
+    <preference name="TapjackProtectionMode" value="block" />
+    <preference name="TapjackStrictMode" value="false" />
+    <preference name="TapjackHideOverlays" value="true" />
+</widget>

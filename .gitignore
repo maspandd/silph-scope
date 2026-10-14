@@ -1,0 +1,12 @@
+node_modules/
+.cache/
+
+example/platforms/
+example/plugins/
+example/node_modules/
+
+tests/overlay-attacker/.gradle/
+tests/overlay-attacker/build/
+tests/overlay-attacker/app/build/
+tests/overlay-attacker/local.properties
+tests/overlay-attacker/.idea/

@@ -1,0 +1,22 @@
+{
+  "name": "tapjack-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test harness for cordova-plugin-tapjack-protection",
+  "scripts": {
+    "android": "cordova run android"
+  },
+  "devDependencies": {
+    "cordova": "^13.0.0",
+    "cordova-android": "^15.1.0",
+    "cordova-plugin-tapjack-protection": "file:.."
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-tapjack-protection": {}
+    }
+  }
+}
